@@ -11,6 +11,7 @@ RedactingFormatter = __import__('filtered_logger').RedactingFormatter
 get_logger = __import__('filtered_logger').get_logger
 PII_FIELDS = __import__('filtered_logger').PII_FIELDS
 get_db = __import__('filtered_logger').get_db
+hash_passwprd = __import__('encrypt_password').hash_password
 
 
 fields = ["password", "date_of_birth"]
@@ -47,3 +48,8 @@ for row in cursor:
     print(row[0])
 cursor.close()
 db.close()
+
+
+password = "MyAmazingPassw0rd"
+print(hash_password(password))
+print(hash_password(password))
